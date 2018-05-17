@@ -3,7 +3,7 @@ For this project, I completed the implementation of a Go-based MapReduce library
 
 I completed this lab as part of MIT’s 2016 Distributed System course ([6.824](http://nil.csail.mit.edu/6.824/2016/index.html)). MapReduce was the starter project for the course. Almost the entire class was focused on the 2nd project, building a [fault-tolerant, sharded key-value store](https://github.com/SidneyPrimas/Distributed_Systems_MIT). Check it out!
 
-For more information, see the [original MapReduce paper](http://nil.csail.mit.edu/6.824/2016/labs/lab-1.html) or the [MapReduce wiki entry](https://en.wikipedia.org/wiki/MapReduce). 
+For more information on MapReduce, see the [original MapReduce paper](http://nil.csail.mit.edu/6.824/2016/labs/lab-1.html) or the [MapReduce wiki entry](https://en.wikipedia.org/wiki/MapReduce). 
 
 Check out the lab instructions [here](http://nil.csail.mit.edu/6.824/2016/labs/lab-1.html).
 
@@ -11,7 +11,7 @@ Check out the lab instructions [here](http://nil.csail.mit.edu/6.824/2016/labs/l
 We coded portions of the MapReduce reduce framework. Specifically, we built the following parts: 
 * **The data processing routines run by each worker to complete the map and reduce phase:** More specifically, we implemented the process by which workers organize outputs (after mapping) into the file system, and the process by which workers aggregate keys from different mapping workers. 
 * **The master's scheduler that splits the processing across multiple parallel nodes:** The scheduler keeps track of available workers and distributes tasks to each worker. 
-**The infrustructure within the master to handle node failures and unreliable networks** 
+* **The infrustructure within the master to handle node failures and unreliable networks** 
 
 ### MapReduce Programs
 I built two MapReduce programs:
@@ -21,7 +21,7 @@ I built two MapReduce programs:
 ## MapReduce Overview
 MapReduce is a data processing tool that enables parallel, distributed processing of large datasets with built-in fault-tolerance. A program run ontop of the MapReduce infrastructure includes a map function (that filters and sorts datasets into ouput key-value pairs) and a reduce function (that summarizes the results for each key). A master system orchestrates the parallel computing, ensuring accurate results despite unreliable networks and node failures. 
 
-To be more specific, MapReduce usually includes three steps: 
+To be a bit more specific, MapReduce usually includes three steps: 
 1. Map: Worker nodes apply the map function to the input that that they have been assigned. Each worker persists their key/value outputs. 
 2. Shuffle: The master node orchestrates the process of assiging each key to a specific worker node, and distributes the data accordingly.
 3. Reduce: The worker nodes apply the reduce function to each of their assigned key, and output the results. 
