@@ -7,6 +7,8 @@ For more information on MapReduce, see the [original MapReduce paper](http://nil
 
 Check out the lab instructions [here](http://nil.csail.mit.edu/6.824/2016/labs/lab-1.html).
 
+A huge thank you to our incredible professors [Robert Morris](https://en.wikipedia.org/wiki/Robert_Tappan_Morris) and [Frans Kaashoek](https://en.wikipedia.org/wiki/Frans_Kaashoek). They represent everything that is good about academia. 
+
 ### MapReduce Library
 We coded portions of the MapReduce reduce framework. Specifically, we built the following parts: 
 * **The data processing routines run by each worker to complete the map and reduce phase:** More specifically, we implemented the process by which workers organize outputs (after mapping) into the file system, and the process by which workers aggregate keys from different mapping workers. 
